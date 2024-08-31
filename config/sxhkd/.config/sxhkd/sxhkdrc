@@ -1,0 +1,218 @@
+#  ███████╗██╗  ██╗██╗  ██╗██╗  ██╗██████╗ ██████╗  ██████╗
+#  ██╔════╝╚██╗██╔╝██║  ██║██║ ██╔╝██╔══██╗██╔══██╗██╔════╝
+#  ███████╗ ╚███╔╝ ███████║█████╔╝ ██║  ██║██████╔╝██║     
+#  ╚════██║ ██╔██╗ ██╔══██║██╔═██╗ ██║  ██║██╔══██╗██║     
+#  ███████║██╔╝ ██╗██║  ██║██║  ██╗██████╔╝██║  ██║╚██████╗
+#  ╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚═════╝ ╚═╝  ╚═╝ ╚═════╝
+
+# 1. BSPWM Window Management
+# --------------------------
+
+# Close and kill windows
+super + {_,shift + }w
+    bspc node -{c,k}
+
+# Send marked node to preselected node
+super + y
+    bspc node newest.marked.local -n newest.!automatic.local
+
+# Swap current node and biggest window
+super + g
+    bspc node -s biggest.window
+
+# Window states
+super + {n,shift + t,s,f}
+    bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
+
+# Node flags
+super + ctrl + {m,x,y,z}
+    bspc node -g {marked,locked,sticky,private}
+
+# Focus/swap nodes
+super + {_,shift + }{h,j,k,l}
+    bspc node -{f,s} {west,south,north,east}
+
+# Focus last node/desktop
+super + {grave,Tab}
+    bspc {node,desktop} -f last
+
+# Focus older/newer node
+super + {o,i}
+    bspc wm -h off; \
+    bspc node {older,newer} -f; \
+    bspc wm -h on
+
+# Focus/send to given desktop
+super + {_,shift + }{1-9,0}
+    bspc {desktop -f,node -d} '^{1-9,10}'
+
+# Preselect direction
+super + ctrl + {h,j,k,l}
+    bspc node -p {west,south,north,east}
+
+# Preselect ratio
+super + ctrl + {1-9}
+    bspc node -o 0.{1-9}
+
+# Cancel preselection for focused node
+super + ctrl + space
+    bspc node -p cancel
+
+# Cancel preselection for focused desktop
+super + ctrl + shift + space
+    bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
+
+# Move/resize windows
+super + alt + {h,j,k,l}
+    bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
+
+# Resize the currently focused window
+super + alt + shift + {h,j,k,l}
+    bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
+
+# Move a floating window
+super + {Left,Down,Up,Right}
+    bspc node -v {-20 0,0 20,0 -20,20 0}
+
+# Rotate the layout of the focused window
+super + r
+    bspc node @parent -R 90
+
+# 2. Terminal and System Utilities
+# --------------------------------
+
+# Terminal emulator
+super + Return
+    kitty
+
+# Reload sxhkd configuration
+super + Escape
+    pkill -USR1 -x sxhkd
+
+# Quit/restart bspwm
+super + alt + {q,r}
+    bspc {quit,wm -r}
+
+# System Monitor
+super + m
+    kitty btop
+
+# File Manager
+super + e
+    thunar
+
+# Program launcher
+super + d
+    rofi -show drun
+
+# Power Menu
+super + q
+    ~/bin/powermenu.sh
+
+# Calendar 
+super + c
+    ~/bin/calendar/calendar.sh
+
+# Tmux
+super + t
+    kitty tmux
+
+# 3. Web and Communication
+# ------------------------
+
+# Launch Firefox Developer Edition
+alt + f
+    firefox-developer-edition
+
+# Launch Gmail
+alt + g
+    firefox-developer-edition https://mail.google.com/mail/u/0/#inbox
+
+# WhatsApp Web
+alt + w
+    firefox-developer-edition https://web.whatsapp.com/
+
+# Telegram Desktop
+alt + t
+    telegram-desktop
+
+# YouTube
+alt + y
+    firefox-developer-edition https://youtube.com/
+
+# 4. Development and Writing Tools
+# --------------------------------
+
+# Obsidian
+super + o
+    obsidian
+
+# GitHub
+alt + h
+    firefox-developer-edition https://github.com/
+
+# TickTick Web
+alt + i
+    firefox-developer-edition https://ticktick.com/signin
+
+# Roadmap.sh Web
+alt + r
+    firefox-developer-edition https://roadmap.sh/
+
+# ChatGPT
+alt + c
+    firefox-developer-edition https://chat.openai.com/
+
+# Excalidraw
+alt + x
+    firefox-developer-edition https://excalidraw.com/
+
+# LeetCode
+alt + l
+    firefox-developer-edition https://leetcode.com/
+
+# Monkeytype
+alt + q
+    firefox-developer-edition https://monkeytype.com/
+
+# Pick Color
+alt + p
+    ~/bin/xcolor-pick.sh
+
+# 5. Media and Miscellaneous
+# --------------------------
+
+# Fullscreen screenshot with Flameshot
+super + p
+    flameshot full -p ~/Pictures/screenshots
+
+# GUI screenshot with Flameshot
+super + shift + p
+    flameshot gui
+
+# Wallpaper Selector
+super + shift + s
+    ~/bin/wallpaper_selector.sh
+
+# OBS Studio
+super + v
+    obs
+
+# Toggle Polybar
+super + b
+    ~/bin/toggle-polybar.sh
+
+# 6. Sound Control
+# ----------------
+
+# Toggle mute
+alt + m
+    wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
+
+# Volume up
+alt + k
+    wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+
+
+# Volume down
+alt + j
+    wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-

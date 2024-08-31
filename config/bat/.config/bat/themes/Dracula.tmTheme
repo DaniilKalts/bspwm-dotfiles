@@ -1,0 +1,71 @@
+{
+  "name": "Dracula",
+  "author": "bat",
+  "meta": {
+    "comment": "Dracula theme for bat"
+  },
+  "settings": [
+    {
+      "scope": [
+        "meta",
+        "emphasis",
+        "strong",
+        "entity",
+        "entity.name",
+        "entity.name.section"
+      ],
+      "style": {
+        "background": "#282a36",
+        "foreground": "#f8f8f2"
+      }
+    },
+    {
+      "scope": "comment",
+      "style": {
+        "foreground": "#6272a4"
+      }
+    },
+    {
+      "scope": "constant",
+      "style": {
+        "foreground": "#bd93f9"
+      }
+    },
+    {
+      "scope": "entity",
+      "style": {
+        "foreground": "#50fa7b"
+      }
+    },
+    {
+      "scope": "keyword",
+      "style": {
+        "foreground": "#ff79c6"
+      }
+    },
+    {
+      "scope": "storage",
+      "style": {
+        "foreground": "#ff79c6"
+      }
+    },
+    {
+      "scope": "string",
+      "style": {
+        "foreground": "#f1fa8c"
+      }
+    },
+    {
+      "scope": "support",
+      "style": {
+        "foreground": "#8be9fd"
+      }
+    },
+    {
+      "scope": "variable",
+      "style": {
+        "foreground": "#50fa7b"
+      }
+    }
+  ]
+}

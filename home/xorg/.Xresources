@@ -1,0 +1,2 @@
+# Set the DPI for fonts (Dots Per Inch)
+Xft.dpi: 100

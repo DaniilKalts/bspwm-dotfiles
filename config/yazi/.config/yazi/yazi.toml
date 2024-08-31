@@ -1,0 +1,36 @@
+# __     __       ___________ 
+# \ \   / //\    |___  /_   _|
+#  \ \_/ //  \      / /  | |  
+#   \   // /\ \    / /   | |  
+#    | |/ ____ \  / /__ _| |_ 
+#    |_/_/    \_\/_____|_____|
+
+[general]
+theme = "dracula"
+
+[keybindings]
+quit = ["q", "Q"]
+up = ["k", "Up"]
+down = ["j", "Down"]
+left = ["h", "Left"]
+right = ["l", "Right"]
+
+[appearance]
+show_hidden = false
+show_icons = true
+
+[layout]
+border = "rounded"
+padding = 1
+
+[integration]
+clipboard_manager = "xclip"
+terminal = "kitty"
+
+[preview]
+image_preview = true
+
+[opener]
+[[opener.edit]]
+run = "nvim \"$@\""
+block = true
