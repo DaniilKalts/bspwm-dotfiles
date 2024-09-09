@@ -2,7 +2,7 @@
 
 `yay` is an AUR helper that simplifies the process of installing packages from the Arch User Repository (AUR).
 
-#### Steps to Install Yay:
+##### Steps to Install Yay:
 
 1. **Install Essential Packages**:
 
@@ -47,58 +47,58 @@ Some of these packages may be installed, but it's not a problem.
 > [!Note] You can install all these packages (except yay, it's below) in one command
 
 ```
-sudo pacman -S --noconfirm alacritty base base-devel efibootmgr grub sudo dhcpcd linux linux-firmware deno nodejs npm git neovim stow ripgrep fzf silicon bspwm picom sxhkd polybar dunst lxappearance feh gpick kitty ttf-jetbrains-mono openssh telegram-desktop vlc obs-studio pavucontrol pipewire-pulse imagemagick flameshot figlet toilet yad thunar file-roller zip unzip eza wget xclip zathura zathura-pdf-mupdf btop neofetch xorg-server xorg-server-common xorg-server-devel xorg-server-xephyr xorg-server-xnest xorg-server-xvfb xorg-server-xwayland xorg-font-util xorg-fonts-100dpi xorg-fonts-75dpi xorg-fonts-encodings xorg-mkfontscale xorg-xrandr xorg-xbacklight xorg-setxkbmap xorg-xinput xorg-xset xorg-xgamma xorg-xsetroot xorg-xev xorg-xdpyinfo xorg-xdriinfo xorg-xhost xorg-xkbcomp xorg-xkbevd xorg-xkbutils xorg-xkill xorg-xlsatoms xorg-xlsclients xorg-xmodmap xorg-xpr xorg-xprop xorg-xrdb xorg-xrefresh xorg-xvinfo xorg-xwd xorg-xwininfo xorg-xwud firefox-developer-edition gsimplecal zsh tmux bat viewnior tumbler ffmpegthumbnailer
+sudo pacman -S --noconfirm alacritty base base-devel efibootmgr grub sudo dhcpcd linux linux-firmware gvfs gvfs-mtp gvfs-gphoto deno nodejs npm git neovim stow ripgrep fzf silicon bspwm picom sxhkd polybar dunst lxappearance feh gpick kitty ttf-jetbrains-mono openssh telegram-desktop vlc obs-studio pavucontrol pipewire-pulse imagemagick flameshot figlet toilet yad thunar file-roller zip unzip eza wget xclip zathura zathura-pdf-mupdf btop neofetch xorg-server xorg-xrandr xorg-xbacklight xorg-setxkbmap xorg-xinput xorg-xset xorg-xev firefox-developer-edition gsimplecal zsh tmux bat viewnior tumbler ffmpegthumbnailer
 ```
 
-#### Core System Utilities
+##### Core System Utilities
 
 ```
-sudo pacman -S alacritty base base-devel efibootmgr grub sudo dhcpcd linux linux-firmware
+sudo pacman -S alacritty base base-devel efibootmgr grub sudo dhcpcd linux linux-firmware gvfs gvfs-mtp gvfs-gphoto
 ```
 
-#### Development Tools
+##### Development Tools
 
 ```
 sudo pacman -S deno nodejs npm git neovim stow ripgrep fzf silicon bat
 ```
 
-#### System Customization and Appearance
+##### System Customization and Appearance
 
 ```
 sudo pacman -S bspwm picom sxhkd polybar dunst lxappearance feh gpick kitty ttf-jetbrains-mono
 ```
 
-#### Networking and Communication
+##### Networking and Communication
 
 ```
 sudo pacman -S openssh telegram-desktop
 ```
 
-#### Multimedia and Graphics
+##### Multimedia and Graphics
 
 ```
 sudo pacman -S vlc obs-studio pavucontrol pipewire-pulse imagemagick flameshot figlet toilet yad
 ```
 
-#### File Management and Utilities
+##### File Management and Utilities
 
 ```
 sudo pacman -S thunar file-roller zip unzip eza wget xclip viewnior tumbler ffmpegthumbnailer
 ```
 
-#### Text Editing and Documentation
+##### Text Editing and Documentation
 
 ```
 pacman -S zathura zathura-pdf-mupdf
 ```
 
-#### System Monitoring and Performance
+##### System Monitoring and Performance
 
 ```
 sudo pacman -S btop neofetch
 ```
 
-#### Install AUR packages
+##### Install AUR packages
 
 ```
 yay -S --noconfirm cmatrix yazi cava tty-clock
@@ -139,28 +139,28 @@ chsh -s $(which zsh)
 
 ### 4. Stow Configuration
 
-Stow config files
+##### Stow config files
 
 ```
 cd ~/projects/x11-bspwm-dotfiles/config
 stow -t ~ *
 ```
 
-Stow home files
+##### Stow home files
 
 ```
 cd ~/projects/x11-bspwm-dotfiles/home
 stow -t ~ *
 ```
 
-Copy binary files
+##### Copy binary files
 
 ```
 cd ~/projects/x11-bspwm-dotfiles
 cp -r bin/ ~
 ```
 
-Copy wallpapers
+##### Copy wallpapers
 
 ```
 mkdir Pictures
