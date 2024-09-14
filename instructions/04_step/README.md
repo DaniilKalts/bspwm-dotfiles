@@ -47,7 +47,7 @@ Some of these packages may be installed, but it's not a problem.
 > [!Note] You can install all these packages (except yay, it's below) in one command
 
 ```
-sudo pacman -S --noconfirm alacritty base base-devel efibootmgr grub sudo dhcpcd linux linux-firmware gvfs gvfs-mtp gvfs-gphoto deno nodejs npm git neovim stow ripgrep fzf silicon bspwm picom sxhkd polybar dunst lxappearance feh gpick kitty ttf-jetbrains-mono openssh telegram-desktop vlc obs-studio pavucontrol pipewire-pulse imagemagick flameshot figlet toilet yad thunar file-roller zip unzip eza wget xclip zathura zathura-pdf-mupdf btop neofetch xorg-server xorg-xrandr xorg-xbacklight xorg-setxkbmap xorg-xinput xorg-xset xorg-xev firefox-developer-edition gsimplecal zsh tmux bat viewnior tumbler ffmpegthumbnailer
+sudo pacman -S --noconfirm alacritty base base-devel efibootmgr grub sudo dhcpcd linux linux-firmware gvfs gvfs-mtp gvfs-gphoto deno nodejs npm git neovim stow ripgrep fzf silicon bspwm picom sxhkd polybar dunst lxappearance feh gpick kitty ttf-jetbrains-mono openssh telegram-desktop vlc obs-studio pavucontrol pipewire-pulse imagemagick flameshot figlet toilet yad thunar file-roller zip unzip eza wget xclip zathura zathura-pdf-mupdf btop neofetch xorg-server xorg-xrandr xorg-xbacklight xorg-setxkbmap xorg-xinput xorg-xset xorg-xev firefox-developer-edition gsimplecal zsh tmux bat viewnior tumbler ffmpegthumbnailer udisks2
 ```
 
 ##### Core System Utilities
@@ -83,7 +83,7 @@ sudo pacman -S vlc obs-studio pavucontrol pipewire-pulse imagemagick flameshot f
 ##### File Management and Utilities
 
 ```
-sudo pacman -S thunar file-roller zip unzip eza wget xclip viewnior tumbler ffmpegthumbnailer
+sudo pacman -S thunar file-roller zip unzip eza wget xclip viewnior tumbler ffmpegthumbnailer udisks2
 ```
 
 ##### Text Editing and Documentation
@@ -199,3 +199,8 @@ cp -r ~/projects/x11-bspwm-dotfiles/wallpapers/ ~/Pictures/
 2. Choose Dracula.
 
 P.S The further customization info check out https://draculatheme.com/
+
+### 8. Mount Volumes (if you have some)
+
+1. lsblk
+2. udisksctl mount -b /dev/your_volume_name
