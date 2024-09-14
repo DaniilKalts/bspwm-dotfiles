@@ -101,7 +101,7 @@ sudo pacman -S btop neofetch
 ##### Install AUR packages
 
 ```
-yay -S --noconfirm cmatrix yazi cava tty-clock
+yay -S --noconfirm cmatrix yazi cava tty-clock teams
 ```
 
 ### 3. Install environment for ZSH

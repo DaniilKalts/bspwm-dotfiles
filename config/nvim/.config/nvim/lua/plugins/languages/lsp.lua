@@ -43,17 +43,17 @@ return {
       end
 
       -- LSP servers configuration
+      lspconfig.lua_ls.setup({
+        capabilities = capabilities,
+        on_attach = on_attach,
+      })
+
       lspconfig.bashls.setup({
         capabilities = capabilities,
         on_attach = on_attach,
       })
 
-      lspconfig.cssls.setup({
-        capabilities = capabilities,
-        on_attach = on_attach,
-      })
-
-      lspconfig.gopls.setup({
+      lspconfig.ts_ls.setup({
         capabilities = capabilities,
         on_attach = on_attach,
       })
@@ -63,12 +63,7 @@ return {
         on_attach = on_attach,
       })
 
-      lspconfig.lua_ls.setup({
-        capabilities = capabilities,
-        on_attach = on_attach,
-      })
-
-      lspconfig.pyright.setup({
+      lspconfig.cssls.setup({
         capabilities = capabilities,
         on_attach = on_attach,
       })
@@ -78,13 +73,19 @@ return {
         on_attach = on_attach,
       })
 
-      lspconfig.tsserver.setup({
+      lspconfig.pyright.setup({
         capabilities = capabilities,
-        on_attach = function(client, bufnr)
-          client.server_capabilities.document_formatting = false
-          client.server_capabilities.semanticTokensProvider = nil
-          on_attach(client, bufnr)
-        end,
+        on_attach = on_attach,
+      })
+
+      lspconfig.gopls.setup({
+        capabilities = capabilities,
+        on_attach = on_attach,
+      })
+
+      lspconfig.clangd.setup({
+        capabilities = capabilities,
+        on_attach = on_attach,
       })
 
       -- ESLint LSP setup

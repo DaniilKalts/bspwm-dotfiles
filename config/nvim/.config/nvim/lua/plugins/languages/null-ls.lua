@@ -5,15 +5,18 @@ return {
 
     null_ls.setup({
       sources = {
-        -- JavaScript/TypeScript/HTML/CSS formatting
-        null_ls.builtins.formatting.prettier,
-
         -- Lua formatting
         null_ls.builtins.formatting.stylua,
 
-        -- Go formatting and linting
-        null_ls.builtins.formatting.goimports,  -- Go formatting
-        null_ls.builtins.diagnostics.golangci_lint, -- Go linting
+        -- Bash formatting with beautysh
+        null_ls.builtins.formatting.beautysh,
+        null_ls.builtins.formatting.shfmt,
+
+        -- JavaScript/TypeScript linting
+        null_ls.builtins.diagnostics.eslint, -- JavaScript/TypeScript linting
+
+        -- JavaScript/TypeScript/HTML/CSS formatting
+        null_ls.builtins.formatting.prettier,
 
         -- Python formatting and linting
         null_ls.builtins.formatting.black,   -- Python formatting
@@ -22,14 +25,13 @@ return {
         null_ls.builtins.diagnostics.pydocstyle, -- Python docstring style checking
         null_ls.builtins.formatting.isort,   -- Python import sorting and removal of unused imports
 
-        -- JavaScript/TypeScript linting
-        null_ls.builtins.diagnostics.eslint, -- JavaScript/TypeScript linting
+        -- Go formatting and linting
+        null_ls.builtins.formatting.goimports,  -- Go formatting
+        null_ls.builtins.diagnostics.golangci_lint, -- Go linting
 
-        -- Bash formatting with beautysh
-        null_ls.builtins.formatting.beautysh,
-
-        -- Bash formatting with shfmt
-        null_ls.builtins.formatting.shfmt,
+        -- C++ formatting
+        null_ls.builtins.formatting.clang_format,
+        null_ls.builtins.diagnostics.cpplint,
 
         -- Configuration files formatting (JSON, YAML, Markdown, etc.)
         null_ls.builtins.formatting.prettier.with({

@@ -140,6 +140,10 @@ alt + t
 alt + y
     firefox-developer-edition https://youtube.com/
 
+# Microsoft Teams
+super + alt + t 
+    teams
+
 # 4. Development and Writing Tools
 # --------------------------------
 
