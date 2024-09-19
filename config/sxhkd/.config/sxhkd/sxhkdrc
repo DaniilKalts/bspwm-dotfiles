@@ -148,7 +148,7 @@ super + alt + t
 # --------------------------------
 
 # Obsidian
-super + o
+alt + o
     obsidian
 
 # GitHub

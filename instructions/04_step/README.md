@@ -47,7 +47,7 @@ Some of these packages may be installed, but it's not a problem.
 > [!Note] You can install all these packages (except yay, it's below) in one command
 
 ```
-sudo pacman -S --noconfirm alacritty base base-devel efibootmgr grub sudo dhcpcd linux linux-firmware gvfs gvfs-mtp gvfs-gphoto deno nodejs npm git neovim stow ripgrep fzf silicon bspwm picom sxhkd polybar dunst lxappearance feh gpick kitty ttf-jetbrains-mono openssh telegram-desktop vlc obs-studio pavucontrol pipewire-pulse imagemagick flameshot figlet toilet yad thunar file-roller zip unzip eza wget xclip zathura zathura-pdf-mupdf btop neofetch xorg-server xorg-xrandr xorg-xbacklight xorg-setxkbmap xorg-xinput xorg-xset xorg-xev firefox-developer-edition gsimplecal zsh tmux bat viewnior tumbler ffmpegthumbnailer udisks2
+sudo pacman -S --noconfirm alacritty base base-devel efibootmgr grub sudo dhcpcd linux linux-firmware gvfs gvfs-mtp gvfs-gphoto deno nodejs npm git neovim stow ripgrep fzf silicon bspwm picom sxhkd polybar dunst lxappearance feh gpick kitty ttf-jetbrains-mono openssh telegram-desktop vlc obs-studio pavucontrol pipewire-pulse imagemagick flameshot figlet toilet yad thunar file-roller zip unzip eza wget xclip zathura zathura-pdf-mupdf btop neofetch xorg-server xorg-xrandr xorg-xbacklight xorg-setxkbmap xorg-xinput xorg-xset xorg-xev firefox-developer-edition gsimplecal zsh tmux bat viewnior tumbler ffmpegthumbnailer udisks2 obsidian
 ```
 
 ##### Core System Utilities
@@ -89,7 +89,7 @@ sudo pacman -S thunar file-roller zip unzip eza wget xclip viewnior tumbler ffmp
 ##### Text Editing and Documentation
 
 ```
-pacman -S zathura zathura-pdf-mupdf
+pacman -S zathura zathura-pdf-mupdf obsidian
 ```
 
 ##### System Monitoring and Performance
@@ -204,3 +204,22 @@ P.S The further customization info check out https://draculatheme.com/
 
 1. lsblk
 2. udisksctl mount -b /dev/your_volume_name
+
+### 9. Enable right-click with touchpad
+
+1. cd /etc/X11/xorg.conf
+2. sudo nvim 40-libinput.conf
+3. Paste this code:
+
+   ```
+   Section "InputClass"
+       Identifier "libinput touchpad catchall"
+       MatchIsTouchpad "on"
+       Driver "libinput"
+       Option "Tapping" "on"
+       Option "ClickMethod" "clickfinger"
+       Option "TappingButtonMap" "lrm"  # Left, Right, Middle mapping
+   EndSection
+   ```
+
+4. Reboot the system
