@@ -12,6 +12,9 @@ return {
 				null_ls.builtins.formatting.beautysh,
 				null_ls.builtins.formatting.shfmt,
 
+				-- Docker linting
+				null_ls.builtins.diagnostics.dockerls,
+
 				-- JavaScript/TypeScript linting
 				null_ls.builtins.diagnostics.eslint, -- JavaScript/TypeScript linting
 
